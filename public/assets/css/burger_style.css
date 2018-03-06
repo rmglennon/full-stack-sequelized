@@ -1,0 +1,41 @@
+.main-text {
+  background-color: #fbefcc!important;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+body {
+  background-color: #fbefcc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  justify-content: space-between;
+  display: flex;
+}
+
+.devour-btn, 
+#submit-burger {
+  background-color: #e0876a;
+  border-color: #f9ccac;
+}
+
+.devour-btn:hover, 
+#submit-burger:hover {
+  background-color: #f4a688;
+  border-color: #f4a688;
+}
+
+form {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#input-label {
+  font-size: 24px;
+}
