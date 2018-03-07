@@ -5,6 +5,9 @@ var PORT = process.env.PORT || 3000;
 
 var app = express();
 
+// add models for syncing
+var db = require("./models");
+
 // serve static content for the app and set up body-parser
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
@@ -19,11 +22,13 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them
+// import routes and give the server access to them
 var routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
-// start the server listening
-app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+// sync sequelize models and start the server listening
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
