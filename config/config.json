@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "process.env.SEQUELIZE_USER",
-    "password": "process.env.SEQUELIZE_PW",
-    "database": "process.env.SEQUELIZE_DB",
-    "host": "process.env.SEQUELIZE_HOST",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
